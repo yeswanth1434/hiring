@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+    parameters {
+        string defaultValue: '10', description: 'Enter Number One', name: 'varOne'
+        string defaultValue: '50', description: 'Enter Number Two', name: 'varTwo'
+    }
+    stages {
+        stage('Add Two Numbes') {
+            steps {
+                script {
+                    def varOne=params.varOne as int
+                    def varTwo=params.varTwo as int
+                    def result=varOne+varTwo
+                    echo"Result is ${result}"
+                }
+            }
+        }
+    }
+}
