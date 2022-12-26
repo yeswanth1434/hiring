@@ -16,8 +16,7 @@ pipeline {
         }
         stage('Docker Push') {
             steps {
-                withCredentials([string(credentialsId: 'docker-hub', variable: 'hubPwd')]) {
-                    sh "docker login -u yesh3003 -p ${hubPwd}"
+                    sh "docker login -u yesh3003 -p *******"
                     sh "docker push yesh3003/hiring:0.0.2"
                 }
             }
