@@ -26,7 +26,7 @@ pipeline {
             steps {
                 sshagent(['docker-host']) {
                     sh "ssh -o StrictHostKeyChecking=no  ec2-user@172.31.43.212 docker rm -f hiring"
-                    sh "ssh ec2-user@172.31.43.212 docker run -d -p 8080:8080 --name hiring yesh3003/hiring:0.0.2"
+                    sh "ssh ec2-user@172.31.43.212 docker run -d -p 90:8080 --name hiring yesh3003/hiring:0.0.2"
                 }
             }
         }    
